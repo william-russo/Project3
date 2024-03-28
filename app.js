@@ -1,47 +1,27 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const apiUrl = 'https://my-json-server.typicode.com/william-russo/Project3/quizzes';
-    let currentQuiz = 0;
-    let score = 0;
+// Compile the template
+const homeTemplate = Handlebars.compile(document.getElementById("home-template").innerHTML);
 
-    async function fetchQuiz() {
-        const response = await fetch(`${apiUrl}/1`); // Fetching quiz with ID 1 for simplicity
-        const quiz = await response.json();
-        displayQuiz(quiz);
-    }
+// Render the home screen
+document.getElementById("app").innerHTML = homeTemplate();
 
-    function displayQuiz(quiz) {
-        const app = document.getElementById('app');
-        app.innerHTML = `<h2>${quiz.title}</h2>`;
-        // Handlebars templates would go here
-        // This example uses innerHTML directly for simplicity
-        quiz.questions.forEach(question => {
-            app.innerHTML += `<div class="question-card">
-                <p>${question.question}</p>
-                ${question.options.map(option => `<button class="btn btn-primary option-button">${option}</button>`).join('')}
-            </div>`;
-        });
-
-        // Event listener for options
-        document.querySelectorAll('.option-button').forEach(button => {
-            button.addEventListener('click', function () {
-                const parent = this.parentElement;
-                const selectedAnswer = this.textContent;
-                const questionId = quiz.questions.find(q => q.question === parent.querySelector('p').textContent).id;
-                checkAnswer(questionId, selectedAnswer, quiz);
-            });
-        });
-    }
-
-    function checkAnswer(questionId, selectedAnswer, quiz) {
-        const question = quiz.questions.find(q => q.id === questionId);
-        if (selectedAnswer === question.answer) {
-            alert('Correct!');
-            score++;
-        } else {
-            alert(`Wrong! Correct answer: ${question.answer}`);
-        }
-        // Move to next question or finish quiz
-    }
-
-    fetchQuiz();
+// Event listener for starting the quiz
+document.getElementById("startQuiz").addEventListener("click", function() {
+    const userName = document.getElementById("name").value;
+    startQuiz(userName);
 });
+
+// Function to start the quiz
+function startQuiz(userName) {
+    // Load the first question
+    // Replace this with actual logic to load quiz questions from the API
+    console.log(`Starting quiz for ${userName}`);
+}
+
+// Function to load a question
+async function loadQuestion(questionId) {
+    const response = await fetch(`https://my-json-server.typicode.com/YOUR_GITHUB_USERNAME/YOUR_REPO/questions/${questionId}`);
+    const question = await response.json();
+    // Render the question
+}
+
+// Add more functions here to handle question rendering, answer submission, and feedback

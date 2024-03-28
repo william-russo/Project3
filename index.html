@@ -4,14 +4,24 @@
     		<meta charset="UTF-8">
     		<meta name="viewport" content="width=device-width, initial-scale=1.0">
     		<title>Quiz App</title>
-    		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    		<link rel="stylesheet" href="style.css">
+    		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		<link rel="stylesheet" href="styles.css">
 	</head>
 	<body>
-    		<div id="app" class="container mt-5">
-    		</div>
+    		<div id="app"></div>
 
-    		<script src="https://cdn.jsdelivr.net/npm/handlebars/dist/handlebars.min.js"></script>
+    		<!-- Handlebars Template for Home Screen -->
+    		<script id="home-template" type="text/x-handlebars-template">
+        		<div class="container">
+            			<h1>Welcome to the Quiz App</h1>
+            			<input type="text" id="name" placeholder="Enter your name" class="form-control"/>
+            			<button id="startQuiz" class="btn btn-primary mt-3">Start Quiz</button>
+        		</div>
+   		 </script>
+
+    		<!-- JS Libraries -->
+    		<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
     		<script src="app.js"></script>
 	</body>
 </html>
+

@@ -2,16 +2,18 @@
   "quizzes": [
     {
       "id": 1,
-      "title": "Basic Programming",
-      "questions": [
-        {
-          "id": 101,
-          "question": "What is the output of `console.log(1 + '1')` in JavaScript?",
-          "options": ["11", "2", "Error", "undefined"],
-          "answer": "11",
-          "explanation": "In JavaScript, adding a number and a string together results in string concatenation."
-        }
-      ]
+      "title": "JavaScript Basics",
+      "questions": [1, 2, 3]
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple-choice",
+      "question": "What does HTML stand for?",
+      "options": ["Hyper Text Markup Language", "Hot Mail", "How to Make Lasagna"],
+      "answer": "Hyper Text Markup Language"
     }
   ]
 }
+
