@@ -2,18 +2,65 @@
   "quizzes": [
     {
       "id": 1,
-      "title": "JavaScript Basics",
+      "name": "Programming Languages",
       "questions": [1, 2, 3]
+    },
+    {
+      "id": 2,
+      "name": "Web Development",
+      "questions": [4, 5, 6]
     }
   ],
   "questions": [
     {
       "id": 1,
-      "type": "multiple-choice",
-      "question": "What does HTML stand for?",
-      "options": ["Hyper Text Markup Language", "Hot Mail", "How to Make Lasagna"],
-      "answer": "Hyper Text Markup Language"
+      "type": "multipleChoice",
+      "question": "Which language is primarily used for web development?",
+      "options": ["Python", "JavaScript", "C++"],
+      "answer": "JavaScript"
+    },
+    {
+      "id": 2,
+      "type": "narrative",
+      "question": "Explain the concept of hoisting in JavaScript.",
+      "answer": "Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their containing scope before code execution."
+    },
+    {
+      "id": 3,
+      "type": "imageSelection",
+      "question": "Which logo represents the Python programming language?",
+      "images": [
+        "url_to_python_logo.jpg",
+        "url_to_java_logo.jpg",
+        "url_to_javascript_logo.jpg"
+      ],
+      "answer": "url_to_python_logo.jpg"
+    },
+    {
+      "id": 4,
+      "type": "multipleChoice",
+      "question": "What does CSS stand for?",
+      "options": ["Computer Style Sheets", "Creative Style System", "Cascading Style Sheets"],
+      "answer": "Cascading Style Sheets"
+    },
+    {
+      "id": 5,
+      "type": "narrative",
+      "question": "Describe the box model in CSS.",
+      "answer": "In CSS, the box model is a box that wraps around every HTML element. It consists of margins, borders, padding, and the actual content."
+    },
+    {
+      "id": 6,
+      "type": "imageSelection",
+      "question": "Select the icon that is commonly associated with HTML5.",
+      "images": [
+        "url_to_html5_logo.jpg",
+        "url_to_css3_logo.jpg",
+        "url_to_bootstrap_logo.jpg"
+      ],
+      "answer": "url_to_html5_logo.jpg"
     }
   ]
 }
+
 

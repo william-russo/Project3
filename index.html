@@ -4,23 +4,56 @@
     		<meta charset="UTF-8">
     		<meta name="viewport" content="width=device-width, initial-scale=1.0">
     		<title>Quiz App</title>
-    		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-		<link rel="stylesheet" href="styles.css">
+    		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 	</head>
 	<body>
-    		<div id="app"></div>
+   		<div id="quiz-app" class="container">
+    			<!-- Content will be injected here by JavaScript -->
+		</div>
 
-    		<!-- Handlebars Template for Home Screen -->
-    		<script id="home-template" type="text/x-handlebars-template">
-        		<div class="container">
-            			<h1>Welcome to the Quiz App</h1>
-            			<input type="text" id="name" placeholder="Enter your name" class="form-control"/>
-            			<button id="startQuiz" class="btn btn-primary mt-3">Start Quiz</button>
-        		</div>
-   		 </script>
+		<!-- Quiz Selection Template -->
+		<script id="quiz-selection-template" type="text/x-handlebars-template">
+    			<div class="quiz-selection">
+        			<h2>Welcome to the Quiz App</h2>
+       				 <select id="quiz-select" class="form-control">
+            				<option value="">Select a Quiz</option>
+            				<option value="1">Programming Languages</option>
+            				<option value="2">Web Development</option>
+        			</select>
+        			<button id="start-quiz" class="btn btn-primary mt-2">Start Quiz</button>
+    			</div>
+		</script>
 
-    		<!-- JS Libraries -->
+		<!-- Multiple Choice Question Template -->
+		<script id="question-multiple-choice-template" type="text/x-handlebars-template">
+    			<div class="question">
+       				<h2>{{question}}</h2>
+        			{{#each options}}
+            			<button class="answer-btn btn btn-info" data-answer="{{this}}">{{this}}</button>
+        			{{/each}}
+    			</div>
+		</script>
+
+		<!-- Narrative Question Template -->
+		<script id="question-narrative-template" type="text/x-handlebars-template">
+    			<div class="question">
+        			<h2>{{question}}</h2>
+        			<input id="narrative-answer" type="text" class="form-control" placeholder="Your answer">
+        			<button id="submit-answer" class="btn btn-primary mt-2">Submit</button>
+    			</div>
+		</script>
+
+		<!-- Result Template -->
+		<script id="result-template" type="text/x-handlebars-template">
+    			<div class="result">
+        			<h2>{{message}}</h2>
+        			<button id="restart-quiz" class="btn btn-success">Restart Quiz</button>
+    			</div>
+		</script>
+
+
     		<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
+    		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     		<script src="app.js"></script>
 	</body>
 </html>
